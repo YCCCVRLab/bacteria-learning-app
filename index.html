@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicrobeMaster: Bacteria Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="navbar">
+            <div class="logo">MicrobeMaster</div>
+            <ul class="nav-links">
+                <li data-target="home" class="active">Home</li>
+                <li data-target="learn">Learn</li>
+                <li data-target="quiz">Quiz</li>
+                <li data-target="game">Game</li>
+            </ul>
+        </nav>
+
+        <main id="main-content">
+            <!-- Sections will be dynamically managed here, but for Vanilla JS without a framework, 
+                 we can also just have them all in the DOM and toggle visibility. -->
+            
+            <section id="home" class="page-section active">
+                <div class="hero">
+                    <h1>Explore the Microscopic World</h1>
+                    <p>Master the identification of bacteria through interactive learning and games.</p>
+                    <button class="btn-primary" onclick="app.navigateTo('learn')">Start Learning</button>
+                </div>
+            </section>
+
+            <section id="learn" class="page-section hidden">
+                <div class="section-header">
+                    <h2>Bacteria Encyclopedia</h2>
+                    <p>Click on a card to learn more.</p>
+                </div>
+                <div id="bacteria-gallery" class="gallery-grid">
+                    <!-- Injected by JS -->
+                </div>
+            </section>
+
+            <section id="quiz" class="page-section hidden">
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <h2>Knowledge Check</h2>
+                        <span id="quiz-score">Score: 0</span>
+                    </div>
+                    <div id="quiz-content">
+                        <!-- Injected by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="game" class="page-section hidden">
+                <div class="game-container">
+                    <div class="game-header">
+                        <h2>Label the Bacteria</h2>
+                        <p>Drag the correct label to the bacteria image.</p>
+                    </div>
+                    <div id="game-area">
+                        <!-- Game Canvas/Area -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/learn.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
